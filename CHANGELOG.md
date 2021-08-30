@@ -12,6 +12,11 @@ This major version has been reworked to avoid breaking changes but some edge-cas
 ### Cache-Control header
 
 Redis middleware now add a cache-control header with a max-age based on your route expiration, you can opt-out of this behavior by using `res.express_redis_cache_disable_cache_control=true`
+### Cache status header
+
+You can now opt-in to get a cache status header in the response
+Use `res.express_redis_cache_status=true|false` - default to false
+The response will include the header `redis-cache-status=Hit|Miss`
 
 # Changes between 0.0.8 and 0.1.x
 
@@ -30,6 +35,7 @@ We introduced the `(Boolean) res.express_redis_cache_skip` property which, if se
 ### Deprecated event
 
 The code now emits a *deprecated* event when stumbling upon a deprecated part of the code. View below for more info.
+
 
 ## Fixes
 
